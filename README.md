@@ -1,11 +1,11 @@
-# 🧬 Classificação de Subtipos de Câncer de Mama em DCE-MRI (Duke/TCIA)
+# Classificação de Subtipos de Câncer de Mama em DCE-MRI (Duke/TCIA)
 
 **Projeto Integrador IV – Univesp (2025)**
 **Repositório:** `Projeto_Integrador_IV_Univesp_2025`
 
 ---
 
-## 📘 Visão Geral
+## Visão Geral
 
 Este projeto implementa um **pipeline completo de análise e modelagem** para a **classificação de subtipos de câncer de mama** a partir de exames **DCE-MRI (Dynamic Contrast Enhanced Magnetic Resonance Imaging)** disponibilizados pelo repositório **The Cancer Imaging Archive (TCIA)**, especificamente o conjunto **Duke Breast Cancer DCE-MRI**.
 
@@ -13,7 +13,7 @@ O pipeline une etapas de **ETL, pré-processamento, engenharia de atributos, mod
 
 ---
 
-## 🧩 Estrutura do Repositório
+## Estrutura do Repositório
 
 ```
 Projeto_Integrador_IV_Univesp_2025/
@@ -29,7 +29,7 @@ Projeto_Integrador_IV_Univesp_2025/
 
 ---
 
-## ⚙️ 1. Pipeline ETL
+## 1. Pipeline ETL
 
 **Notebook:** `pipeline_etl_duke_breast_mri.ipynb`
 
@@ -46,7 +46,7 @@ Saída:
 
 ---
 
-## 🤖 2. Pipeline de Classificação
+## 2. Pipeline de Classificação
 
 **Notebook:** `breast_cancer_subtype_classification_tcia_pipeline.ipynb`
 
@@ -72,7 +72,7 @@ Saídas:
 
 ---
 
-## 📊 3. Resultados
+## 3. Resultados
 
 | Modelo                 | AUC  | F1-macro | ECE  | Tempo (s) | Interpretação SHAP |
 | ---------------------- | ---- | -------- | ---- | --------- | ------------------ |
