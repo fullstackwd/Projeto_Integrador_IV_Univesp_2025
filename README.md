@@ -1,7 +1,14 @@
-# Classificação de Subtipos de Câncer de Mama em DCE-MRI (Duke/TCIA)
+```markdown
+# 🩺 Classificação de Subtipos de Câncer de Mama em DCE-MRI (Duke/TCIA)
 
-**Projeto Integrador IV – Univesp (2025)**
-**Repositório:** `Projeto_Integrador_IV_Univesp_2025`
+**Projeto Integrador IV – UNIVESP (2025)**  
+**Curso:** Engenharia de Computação / Ciência de Dados  
+**Repositório:** `Projeto_Integrador_IV_Univesp_2025`  
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-brightgreen)]()
+[![Dataset](https://img.shields.io/badge/Dataset-TCIA%2FDuke-red)](https://www.cancerimagingarchive.net/)
 
 ---
 
@@ -9,13 +16,14 @@
 
 Este projeto implementa um **pipeline completo de análise e modelagem** para a **classificação de subtipos de câncer de mama** a partir de exames **DCE-MRI (Dynamic Contrast Enhanced Magnetic Resonance Imaging)** disponibilizados pelo repositório **The Cancer Imaging Archive (TCIA)**, especificamente o conjunto **Duke Breast Cancer DCE-MRI**.
 
-O pipeline une etapas de **ETL, pré-processamento, engenharia de atributos, modelagem supervisionada** (Logistic Regression e Random Forest) e **avaliação com métricas robustas (AUC, F1, ROC, calibração)**, com foco em **reprodutibilidade, interpretabilidade e boas práticas de ciência de dados aplicada à saúde**.
+O pipeline une etapas de **ETL, pré-processamento, engenharia de atributos, modelagem supervisionada** (Regressão Logística e Random Forest) e **avaliação com métricas robustas (AUC, F1, ROC, calibração)**, com foco em **reprodutibilidade, interpretabilidade e transparência em ciência de dados aplicada à saúde**.
 
 ---
 
 ## Estrutura do Repositório
 
 ```
+
 Projeto_Integrador_IV_Univesp_2025/
 │
 ├── codigos/
@@ -23,9 +31,30 @@ Projeto_Integrador_IV_Univesp_2025/
 │   ├── pipeline_etl_duke_breast_mri.ipynb                         # ETL e pré-processamento do dataset Duke/TCIA
 │   ├── feature_importance.csv                                     # Importância das variáveis
 │   ├── metrics_summary.csv                                        # Resumo das métricas de desempenho
-│
+│   └── Projeto Integrador.pbix                                    # Dashboard interativo (Power BI)
 └── README.md                                                      # Documentação do projeto
-```
+
+````
+
+---
+
+## Execução
+
+1. **ETL – Extração e Limpeza dos Dados**
+   Execute o notebook `pipeline_etl_duke_breast_mri.ipynb`
+   → Saída: `dataset_duke_breast_clean.csv`
+
+2. **Modelagem e Avaliação**
+   Execute o notebook `breast_cancer_subtype_classification_tcia_pipeline.ipynb`
+   → Saídas:
+
+   * `feature_importance.csv`
+   * `metrics_summary.csv`
+   * Gráficos ROC, F1, calibração e matriz de confusão
+
+3. **Dashboard Power BI**
+   Abra `Projeto Integrador.pbix`
+   → Visualização interativa dos resultados e comparações entre modelos
 
 ---
 
@@ -37,12 +66,12 @@ Etapas principais:
 
 * Conexão e download automático dos dados via **API TCIA**
 * Padronização de metadados clínicos e de imagem
-* Conversão e organização de imagens DICOM → NIfTI
-* Normalização de intensidades e extração de regiões de interesse (ROIs)
-* Geração de um dataset tabular com variáveis radiômicas e clínicas integradas
+* Conversão DICOM → NIfTI
+* Normalização de intensidades e extração de ROIs
+* Geração de dataset tabular radiômico-clínico
 
 Saída:
-`dataset_duke_breast_clean.csv` *(gerado internamente para o pipeline de modelagem)*
+`dataset_duke_breast_clean.csv`
 
 ---
 
@@ -52,23 +81,23 @@ Saída:
 
 Etapas principais:
 
-* Padronização de atributos e encoding de variáveis categóricas
-* Balanceamento das classes via pesos automáticos
-* Treinamento e validação cruzada (`GroupKFold`)
-* Comparação de dois modelos principais:
+* Padronização e encoding de variáveis categóricas
+* Balanceamento de classes (`class_weight='balanced'`)
+* Validação cruzada com **GroupKFold**
+* Treinamento e comparação de modelos:
 
-  * `LogisticRegression` (baseline interpretável)
-  * `RandomForestClassifier` (modelo não linear robusto)
-* Cálculo de métricas:
+  * **Regressão Logística (baseline interpretável)**
+  * **Random Forest (modelo não linear robusto)**
 
-  * AUC-ROC, F1-macro, matriz de confusão
-  * Curvas ROC e F1 por classe
-  * Calibração e Brier score
+Métricas avaliadas:
+
+* **AUC-ROC**, **F1-macro**, **ECE (Expected Calibration Error)**
+* Curvas **ROC**, **F1 por classe**, **calibração** e **matriz de confusão normalizada**
 
 Saídas:
 
-* `feature_importance.csv` – importância das variáveis do modelo Random Forest
-* `metrics_summary.csv` – desempenho médio e desvio-padrão das métricas
+* `feature_importance.csv`
+* `metrics_summary.csv`
 
 ---
 
@@ -80,7 +109,7 @@ Saídas:
 | Random Forest          | 0.88 | 0.83     | 0.03 | 25        | Média              |
 | XGBoost (teste futuro) | 0.90 | 0.85     | 0.02 | 31        | Alta               |
 
-As variáveis mais relevantes incluíram **intensidade média da ROI, textura de contraste**, e **heterogeneidade do realce**, sugerindo correlação direta com a angiogênese tumoral.
+As variáveis mais relevantes incluíram **intensidade média da ROI**, **textura de contraste** e **heterogeneidade do realce**, correlacionadas à **angiogênese tumoral** observada em exames de ressonância.
 
 ---
 
@@ -92,6 +121,7 @@ O notebook gera automaticamente:
 * Gráficos de **importância de variáveis (feature importance)**
 * Curvas de **calibração** e **densidade de probabilidades**
 * **Matriz de confusão normalizada**
+* **Dashboard Power BI** integrando todas as métricas
 
 ---
 
@@ -99,15 +129,15 @@ O notebook gera automaticamente:
 
 * **Python 3.10+**
 * `numpy`, `pandas`, `matplotlib`, `seaborn`
-* `scikit-learn`
+* `scikit-learn`, `statsmodels`, `shap`
 * `requests`, `json`
-* `statsmodels` (análises complementares)
-* `pydicom`, `nibabel` (manipulação de imagens médicas)
-* `shap` (interpretação dos modelos)
+* `pydicom`, `nibabel` (imagens médicas)
+* **Power BI Desktop** (visualização)
+* **GitHub** (controle de versão)
 
 ---
 
-## 6. Próximos Passos (Roadmap)
+## 6. Roadmap Futuro
 
 | Etapa Futura          | Objetivo                             | Ferramentas       | Resultado Esperado    |
 | --------------------- | ------------------------------------ | ----------------- | --------------------- |
@@ -118,13 +148,14 @@ O notebook gera automaticamente:
 
 ---
 
-## 7. Licença
+## 7. Referências
 
-Este projeto é distribuído sob a licença **MIT**, permitindo uso e modificação livre para fins educacionais e científicos.
+* **The Cancer Imaging Archive (TCIA):** [https://www.cancerimagingarchive.net/](https://www.cancerimagingarchive.net/)
+* DUKE Breast Cancer DCE-MRI Dataset Documentation
 
 ---
 
-## 8. Referências
+## 8. Licença
 
-* The Cancer Imaging Archive (TCIA): [https://www.cancerimagingarchive.net/](https://www.cancerimagingarchive.net/)
+Distribuído sob a licença **MIT**, permitindo uso e modificação livre para fins educacionais e científicos.
 
