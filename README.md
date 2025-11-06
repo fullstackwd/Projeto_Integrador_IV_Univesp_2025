@@ -84,7 +84,7 @@ As variáveis mais relevantes incluíram **intensidade média da ROI, textura de
 
 ---
 
-## 📈 4. Visualizações
+## 4. Visualizações
 
 O notebook gera automaticamente:
 
@@ -95,7 +95,7 @@ O notebook gera automaticamente:
 
 ---
 
-## 🧪 5. Ferramentas Utilizadas
+## 5. Ferramentas Utilizadas
 
 * **Python 3.10+**
 * `numpy`, `pandas`, `matplotlib`, `seaborn`
@@ -107,7 +107,7 @@ O notebook gera automaticamente:
 
 ---
 
-## 🚀 6. Próximos Passos (Roadmap)
+## 6. Próximos Passos (Roadmap)
 
 | Etapa Futura          | Objetivo                             | Ferramentas       | Resultado Esperado    |
 | --------------------- | ------------------------------------ | ----------------- | --------------------- |
@@ -118,13 +118,13 @@ O notebook gera automaticamente:
 
 ---
 
-## 🧾 7. Licença
+## 7. Licença
 
 Este projeto é distribuído sob a licença **MIT**, permitindo uso e modificação livre para fins educacionais e científicos.
 
 ---
 
-## 🧠 8. Referências
+## 8. Referências
 
 * The Cancer Imaging Archive (TCIA): [https://www.cancerimagingarchive.net/](https://www.cancerimagingarchive.net/)
 
