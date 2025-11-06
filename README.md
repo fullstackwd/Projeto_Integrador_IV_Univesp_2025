@@ -3,8 +3,9 @@
 **Projeto Integrador IV – UNIVESP (2025)**  
 **Curso:** Engenharia de Computação / Ciência de Dados  
 **Repositório:** `Projeto_Integrador_IV_Univesp_2025`  
+**Vídeo:** 
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.13%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-brightgreen)]()
 [![Dataset](https://img.shields.io/badge/Dataset-TCIA%2FDuke-red)](https://www.cancerimagingarchive.net/)
