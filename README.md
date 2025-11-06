@@ -1,5 +1,4 @@
-```markdown
-# 🩺 Classificação de Subtipos de Câncer de Mama em DCE-MRI (Duke/TCIA)
+# Classificação de Subtipos de Câncer de Mama em DCE-MRI (Duke/TCIA)
 
 **Projeto Integrador IV – UNIVESP (2025)**  
 **Curso:** Engenharia de Computação / Ciência de Dados  
@@ -19,10 +18,9 @@ Este projeto implementa um **pipeline completo de análise e modelagem** para a 
 O pipeline une etapas de **ETL, pré-processamento, engenharia de atributos, modelagem supervisionada** (Regressão Logística e Random Forest) e **avaliação com métricas robustas (AUC, F1, ROC, calibração)**, com foco em **reprodutibilidade, interpretabilidade e transparência em ciência de dados aplicada à saúde**.
 
 ---
-
+```markdown
 ## Estrutura do Repositório
 
-```
 
 Projeto_Integrador_IV_Univesp_2025/
 │
