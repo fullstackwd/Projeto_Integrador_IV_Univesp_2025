@@ -1,7 +1,7 @@
 # Classificação de Subtipos de Câncer de Mama em DCE-MRI (Duke/TCIA)
 
-**Projeto Integrador IV – UNIVESP (2025)**  
-**Curso:** Engenharia de Computação / Ciência de Dados  
+**[Projeto Integrador IV – UNIVESP (2025)](https://univesp.br/)**
+**Curso:** [Engenharia de Computação](https://univesp.br/cursos/engenharia-de-computacao) / [Ciência de Dados](https://univesp.br/cursos/bacharel-em-ciencia-de-dados)
 **Repositório:** `Projeto_Integrador_IV_Univesp_2025`  
 **Vídeo:** 
 
